@@ -1,0 +1,45 @@
+#!/bin/zsh
+
+# Deepin Linux
+alias open='dde-file-manager'
+
+# Python Virtualenvs
+alias ploneenv='source ~/venv/plone/bin/activate'
+alias aenv='source bin/activate'
+
+# Plone buildout and instance
+alias pinf='bin/instance fg'
+alias pin='bin/instance'
+alias pbo='bin/buildout'
+
+# Basic Builtin
+alias la='ls -lAh --color'
+alias ls='ls -Gh --color'
+alias ll='ls -l --color'
+alias grep='grep --color'
+alias rmf='rm -rf'
+
+# Aptitude
+alias update='sudo apt update'
+
+# GIT
+alias grm='git rebase -i master'
+alias gpf='git push --force'
+alias glog='git log --graph'
+alias gcp='git cherry-pick'
+alias gc='git commit -m'
+alias gco='git checkout'
+alias gst='git status'
+alias gp='git push'
+
+# Automatically add "/.." if you type more the two dots. This means it goes
+# from this ".." to this "../..". Like this you can fast change to a parent directory.
+rationalise-dot() {
+if [[ $LBUFFER = *.. ]]; then
+    LBUFFER+=/..
+else
+    LBUFFER+=.
+fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
