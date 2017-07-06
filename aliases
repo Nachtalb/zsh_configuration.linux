@@ -1,7 +1,13 @@
 #!/bin/zsh
 
+# Reload ZSH
+alias reload='source ~/.zshrc'
+
+# Aptitude
+alias add-apt-key='sudo apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys'
+
 # Deepin Linux
-alias open='dde-file-manager'
+alias open='f() { dde-file-manager &>/dev/null $1 & };f'
 
 # Python Virtualenvs
 alias ploneenv='source ~/venv/plone/bin/activate'
@@ -23,10 +29,13 @@ alias rmf='rm -rf'
 alias update='sudo apt update'
 
 # GIT
+alias gca='git commit --all --amend --no-edit'
+alias grc='git rebase --continue'
 alias grm='git rebase -i master'
 alias gpf='git push --force'
 alias glog='git log --graph'
 alias gcp='git cherry-pick'
+alias gri='git rebase -i'
 alias gc='git commit -m'
 alias gco='git checkout'
 alias gst='git status'
