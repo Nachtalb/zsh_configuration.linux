@@ -41,6 +41,7 @@ alias glog='git log --graph'
 alias gcp='git cherry-pick'
 alias gco='git checkout'
 alias gst='git status'
+alias gpu='git pull'
 
 # Misc
 alias fsize='du -sh' # Show dictionary size
