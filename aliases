@@ -1,54 +1,46 @@
 #!/bin/zsh
 
-# Reload ZSH
-alias reload='source ~/.zshrc'
-
-# Aptitude
-alias add-apt-key='sudo apt-key adv --keyserver ha.pool.sks-keyservers.net --recv-keys'
+# # # # # # # # # # # # #
+#    Alias Config     #
+# # # # # # # # # # # # #
 
 # Deepin Linux
+# Open given path in the dde-file-manager, while the output is hidden
 alias open='f() { dde-file-manager &>/dev/null $1 & };f'
 
-# Python Virtualenvs
-alias ploneenv='source ~/venv/plone/bin/activate'
-alias aenv='source bin/activate'
-
-# Plone buildout and instance
-alias pinf='bin/instance fg'
+# Buildout
 alias pin='bin/instance'
 alias pbo='bin/buildout'
+# Instance
+alias pinf='bin/instance fg'
 
 # Basic Builtin
-alias la='ls -lAh --color'
-alias ls='ls -Gh --color'
-alias ll='ls -l --color'
+alias la='ls -lAhX --color'
+alias ls='ls -GhX --color'
+alias ll='ls -lX --color'
 alias grep='grep --color'
 alias rmf='rm -rf'
 
 # Aptitude
 alias update='sudo apt update'
+alias upgrade='sudo apt upgrade'
 
 # GIT
-alias gca='git commit --all --amend --no-edit'
+# rebase
 alias grc='git rebase --continue'
-alias grm='git rebase -i master'
+alias gri='git rebase -i'
+alias gra='git rebase --abort'
+# commit
+alias gca='git commit --all --amend --no-edit'
+alias gc='git commit -m'
+# push
 alias gpf='git push --force'
+alias gp='git push'
+# misc
 alias glog='git log --graph'
 alias gcp='git cherry-pick'
-alias gri='git rebase -i'
-alias gc='git commit -m'
 alias gco='git checkout'
 alias gst='git status'
-alias gp='git push'
 
-# Automatically add "/.." if you type more the two dots. This means it goes
-# from this ".." to this "../..". Like this you can fast change to a parent directory.
-rationalise-dot() {
-if [[ $LBUFFER = *.. ]]; then
-    LBUFFER+=/..
-else
-    LBUFFER+=.
-fi
-}
-zle -N rationalise-dot
-bindkey . rationalise-dot
+# Misc
+alias fsize='du -sh' # Show dictionary size

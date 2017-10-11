@@ -2,8 +2,5 @@
 if [ ! -f buildout.cfg ]; then
     ln -s development.cfg buildout.cfg
 fi
-python2.7 bootstrap.py
+python bootstrap.py
 bin/buildout
-if [ ! $# -eq 0 ] && [ "$1" = "-s" ]; then
-    bin/instance fg
-fi

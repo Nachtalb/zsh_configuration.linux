@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+if [ -n "$2" ]
+then
+	grep -rn -A3 -B3 $2 -e $1
+else
+    grep -rn -A3 -B3 . -e $1
+fi

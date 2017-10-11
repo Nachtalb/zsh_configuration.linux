@@ -1,0 +1,20 @@
+#!/bin/zsh
+
+ORIGINAL_PATH=$HOME/.local/share/virtualenvs/$1
+SYMLINK=$HOME/.pyenv/versions/$1
+
+if [ ! -n "$1" ]; then
+    echo "You have to give me the name, dummy (◔_◔)"
+    exit 128
+elif [ ! -d ${ORIGINAL_PATH} ]; then
+   echo "The pipenv-virtualenv \"$1\" does not exist!"
+    exit 1
+elif [ ! -d "$HOME/.pyenv" ]; then
+    echo "Pyenv is not installed!"
+    exit 1
+fi
+
+ln -s ${ORIGINAL_PATH} ${SYMLINK}
+echo "Well that was hard, but we made it. You can activate the version for \
+this session by using:\npyenv shell $1\nor you can set it as default for the \
+current directory by:\npyenv local $1"

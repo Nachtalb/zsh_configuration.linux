@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+# CD hook to show folder content and pwd on cd except the $HOME directory
+function on_cd_hook() {
+    emulate -L zsh
+    if [ "$HOME" != "${PWD}" ]
+    then
+        la
+    fi
+    echo -e "\n\\033[0;31m### CURRENT PATH ###\\033[0m"
+    pwd
+}
+
+chpwd_functions=(${chpwd_functions[@]} "on_cd_hook")
+
+
+# Automatically add "/.." if you type more the two dots. This means it goes
+# from this ".." to this "../..". Like this you can fast change to a parent directory.
+rationalise-dot() {
+	if [[ $LBUFFER = *.. ]]; then
+	    LBUFFER+=/..
+	else
+	    LBUFFER+=.
+	fi
+}
+zle -N rationalise-dot
+bindkey . rationalise-dot
+
