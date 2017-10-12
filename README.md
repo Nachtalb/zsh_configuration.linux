@@ -80,8 +80,6 @@ Create a symlink to this repositories `.zshrc`
 ln -s ${HOME}/.zsh/.zshrc ${HOME}/.zshrc
 ```
 #### Configure Repository
-Add the following code to you `~/.zshrc`.
-
 Replace `[username]` with you current users name. Like this the you remove the 
 `username@computername` on the left side of your input.
 ```bash
