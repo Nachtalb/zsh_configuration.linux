@@ -81,3 +81,8 @@ fi
 # OpenSSL Missing Fix
 CFLAGS=-I/usr/include/openssl
 LDFLAGS=-L/usr/lib
+
+# Use vim as default editor
+export VISUAL=vim
+export EDITOR="$VISUAL"
+
