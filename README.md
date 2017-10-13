@@ -85,3 +85,18 @@ Replace `[username]` with you current users name. Like this the you remove the
 ```bash
 DEFAULT_USER=[username]
 ```
+
+## After zsh setup
+You should really take a look at this: [Set vim to default editor](https://github.com/Nachtalb/useful-stuff-for-linux#set-vim-to-default-editor).
+Because even though the `VISUAL` and `EDITOR` variable are covered by my 
+configuration, not all programs use them. 
+
+Also for the ones that use [Deepin Linux](https://www.deepin.org/en/) you should
+take a look at these tips: 
+- [Pyenv on Deepin Linux](https://github.com/Nachtalb/useful-stuff-for-linux#pyenv-on-deepin-linux) 
+- [Install nodejs > 6.x on Deepin Linux](https://github.com/Nachtalb/useful-stuff-for-linux#install-nodejs--6x-on-deepin-linux)
+
+For those who don't know Deepin already, take a look at it's [Webpage](https://www.deepin.org/en/) 
+and [Distrowatch](https://distrowatch.com/table.php?distribution=deepin). As of 
+today (13th Oct, 2017), it ranks place 9th with a rating of 9.08 / 10 on most 
+popular distributions.
