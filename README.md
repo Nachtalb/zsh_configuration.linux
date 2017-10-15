@@ -52,7 +52,18 @@ sh -c "$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/to
 ```bash
 git clone https://github.com/bhilburn/powerlevel9k.git ${HOME}/.oh-my-zsh/custom/themes/powerlevel9k
 ```
-You should also install a powerline capable font, like this one: [Meslo](https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf)
+You should also install a powerline capable font, like this one: [Meslo](https://github.com/powerline/fonts/blob/master/Meslo%20Slashed/Meslo%20LG%20M%20Regular%20for%20Powerline.ttf).
+This font is a TTF font. This means on some linux systems you can't install them by double clicking it. If this is the case, the arch linux wiki shows some ways to install them manually. [Arch Wiki Font Installation](https://wiki.archlinux.org/index.php/fonts#Installation). Probably the easiest way is, moving the font into the 
+```bash
+mv /path/to/your_font.ttfm /usr/share/fonts
+``` 
+folder, make it accessible for all users (files 0444, folders 0555)
+```bash
+sudo chown root:root your_font.ttf && sudo chmod 0444 your_font.tff
+```
+and at last reload the font cache: `fc-cache`.
+
+If at this point the font is still not available force reload the font cache (erase all existing caches and rescan). For this you can use `fc-cache -vfr`. More information can be found with `fc-cache --help`.
 
 #### Installing Oh My Zsh Plugins
 [zsh-syntax-highlighting](https://github.com/zsh-users/zsh-syntax-highlighting)
