@@ -24,7 +24,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Load all plugins before we load `oh my zsh` to ensure that everything works correctly
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting last-working-dir pip python sublime web-search)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting last-working-dir pip python sublime web-search ssh-agent)
 
 # start "oh my zsh"
 source "$ZSH/oh-my-zsh.sh"
