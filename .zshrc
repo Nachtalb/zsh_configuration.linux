@@ -86,3 +86,7 @@ LDFLAGS=-L/usr/lib
 export VISUAL=vim
 export EDITOR="$VISUAL"
 
+# Add etcher-cli if available
+if [ -d "/opt/etcher-cli" ]; then
+    export PATH="$PATH:/opt/etcher-cli"
+fi
