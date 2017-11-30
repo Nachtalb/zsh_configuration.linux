@@ -57,6 +57,11 @@ SAVEHIST=1000
 # More readable color for zsh-autosuggest
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=6"
 
+# Fish like path
+POWERLEVEL9K_SHORTEN_DIR_LENGTH=1
+POWERLEVEL9K_SHORTEN_DELIMITER=""
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_right"
+
 # Information shown on the left and right side of the console input
 POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(status background_jobs virtualenv custom_python_version root_indicator context dir dir_writable vcs)
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time ssh time)
