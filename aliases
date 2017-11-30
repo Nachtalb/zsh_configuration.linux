@@ -16,6 +16,7 @@ alias pinf='bin/instance fg'
 
 # Basic Builtin
 alias la='ls -lAhX --color'
+alias lt='ls -lAht --color'
 alias ls='ls -GhX --color'
 alias ll='ls -lX --color'
 alias grep='grep --color'
