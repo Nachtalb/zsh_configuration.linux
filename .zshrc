@@ -4,15 +4,6 @@
 #    General Config     #
 # # # # # # # # # # # # #
 
-# Get current python version
-zsh_python_version(){
-    local PYTHON_VERSION=$(python --version 2>&1 | sed 's/[a-zA-Z ]//g')
-    echo ${PYTHON_VERSION}
-}
-
-# Add a `custom_python_version` prompt element for powerlevel9k theme
-POWERLEVEL9K_CUSTOM_PYTHON_VERSION="zsh_python_version"
-
 # With this the username at the start of the line in the console is removed
 DEFAULT_USER=bernd
 
@@ -24,7 +15,7 @@ ZSH_THEME="powerlevel9k/powerlevel9k"
 export ZSH="$HOME/.oh-my-zsh"
 
 # Load all plugins before we load `oh my zsh` to ensure that everything works correctly
-plugins=(git zsh-autosuggestions zsh-syntax-highlighting last-working-dir pip python sublime web-search ssh-agent)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting last-working-dir pip python sublime ssh-agent gpg-agent python pyenv rbenv thefuck zsh-reloa adb common-aliases copyfile debian django extract gitignore)
 
 # start "oh my zsh"
 source "$ZSH/oh-my-zsh.sh"
@@ -68,20 +59,6 @@ POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(command_execution_time ssh time)
 
 # load all functions from the functions folder
 export PATH="$HOME/.zsh/functions:$PATH"
-
-# Initialise Rubyenv if available
-if [ -d "$HOME/.rbenv/bin" ]; then
-  export PATH="$HOME/.rbenv/bin:$PATH"
-  eval "$(rbenv init -)"
-fi
-
-# Initialise PYenv if available
-if [ -d "$HOME/.pyenv/bin" ]; then
-    export PATH="/home/bernd/.pyenv/bin:$PATH"
-    eval "$(pyenv init -)"
-    eval "$(pyenv virtualenv-init -)"
-    eval "$(pyenv virtualenv-init -)"
-fi
 
 # OpenSSL Missing Fix
 CFLAGS=-I/usr/include/openssl
