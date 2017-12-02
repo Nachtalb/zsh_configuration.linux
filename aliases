@@ -4,9 +4,7 @@
 #    Alias Config     #
 # # # # # # # # # # # # #
 
-# Deepin Linux
-# Open given path in the dde-file-manager, while the output is hidden
-alias open='f() { dde-file-manager &>/dev/null $1 & };f'
+alias open='xdg-open'
 
 # Buildout
 alias pin='bin/instance'
