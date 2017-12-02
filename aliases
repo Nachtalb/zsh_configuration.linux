@@ -27,17 +27,17 @@ alias upgrade='sudo apt upgrade'
 # GIT
 # rebase
 alias grc='git rebase --continue'
-alias gri='git rebase -i'
+alias gri='git rebase -S -i'
 alias gra='git rebase --abort'
 # commit
-alias gca='git commit --all --amend --no-edit'
-alias gc='git commit -m'
+alias gca='git commit -S --all --amend --no-edit'
+alias gc='git commit -S -m'
 # push
-alias gpf='git push --force'
-alias gp='git push'
+alias gpf='git push --sign=if-asked --force'
+alias gp='git push --sign=if-asked'
 # misc
 alias glog='git log --graph'
-alias gcp='git cherry-pick'
+alias gcp='git cherry-pick -S '
 alias gco='git checkout'
 alias gst='git status'
 alias gpu='git pull'
